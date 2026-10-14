@@ -1,15 +1,14 @@
-
 export class TokenBucket {
-    /** @type {number} */
-	max
-    /** @type {number} */
-	refillIntervalSeconds
+	/** @type {number} */
+	max;
+	/** @type {number} */
+	refillIntervalSeconds;
 
-    /**
-     * 
-     * @param {number} max 
-     * @param {number} refillIntervalSeconds 
-     */
+	/**
+	 *
+	 * @param {number} max
+	 * @param {number} refillIntervalSeconds
+	 */
 	constructor(max, refillIntervalSeconds) {
 		this.max = max;
 		this.refillIntervalSeconds = refillIntervalSeconds;
@@ -17,12 +16,12 @@ export class TokenBucket {
 
 	storage = new Map();
 
-    /**
-     * 
-     * @param {*} key 
-     * @param {number} cost 
-     * @returns {boolean}
-     */
+	/**
+	 *
+	 * @param {*} key
+	 * @param {number} cost
+	 * @returns {boolean}
+	 */
 	check(key, cost) {
 		const bucket = this.storage.get(key) ?? null;
 		if (bucket === null) {
@@ -36,12 +35,12 @@ export class TokenBucket {
 		return bucket.count >= cost;
 	}
 
-    /**
-     * 
-     * @param {*} key 
-     * @param {number} cost 
-     * @returns {boolean}
-     */
+	/**
+	 *
+	 * @param {*} key
+	 * @param {number} cost
+	 * @returns {boolean}
+	 */
 	consume(key, cost) {
 		let bucket = this.storage.get(key) ?? null;
 		const now = Date.now();

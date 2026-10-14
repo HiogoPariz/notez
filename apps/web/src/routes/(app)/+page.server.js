@@ -1,11 +1,11 @@
-import { redirect } from "@sveltejs/kit";
+import { redirect } from '@sveltejs/kit';
 
 /** @param {import("@sveltejs/kit").RequestEvent} event */
 export async function load({ locals }) {
-    if(!locals.session ) {
-        return redirect(302, "/login")
-    }
-    return
+	if (!locals.session) {
+		return redirect(302, '/login');
+	}
+	return;
 }
 
 /** @param {import("@sveltejs/kit").RequestEvent} event */
@@ -15,7 +15,7 @@ export async function load({ locals }) {
 //     }
 //     deleteSessionTokenCookie(event)
 //     return redirect(302, "/login")
-// } 
+// }
 
 /** @type {import("@sveltejs/kit").Actions} */
 // export const actions = {

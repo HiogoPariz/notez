@@ -1,5 +1,5 @@
 <script>
-// @ts-nocheck
+	// @ts-nocheck
 
 	import { saveNote } from '$lib/services/saveNote';
 
@@ -59,15 +59,14 @@
 				}
 			},
 			onChange: handleSave
-			
 		});
 	});
 </script>
+
 <svelte:head>
 	<title>{noteTitle || 'Default - Notez'}</title>
 </svelte:head>
 <section class="flex flex-col items-center p-4">
 	<input bind:value={noteTitle} placeholder="Notez Title" />
-	<div class="editor w-full" id="editor" ></div>
+	<div class="editor w-full" id="editor"></div>
 </section>
-

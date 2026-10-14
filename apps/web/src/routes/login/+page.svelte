@@ -1,6 +1,5 @@
 <script>
 	import { SignIn } from '@auth/sveltekit/components';
-
 </script>
 
 <svelte:head>
@@ -12,6 +11,6 @@
 		class="flex flex-col gap-4 justify-center items-center p-8 bg-gray-300 border border-gray-600 rounded-xl"
 	>
 		<h1>Login</h1>
-        <SignIn provider="google"></SignIn>
+		<SignIn provider="google"></SignIn>
 	</div>
 </main>
