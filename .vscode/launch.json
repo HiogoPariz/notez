@@ -1,0 +1,21 @@
+{
+	"version": "0.2.0",
+	"configurations": [
+		{
+			"name": "api",
+			"type": "go",
+			"request": "launch",
+			"mode": "auto",
+			"program": "${workspaceFolder}/apps/api/cmd/main.go",
+			"envFile": "${workspaceFolder}/.env"
+		},
+		{
+			"name": "files",
+			"type": "go",
+			"request": "launch",
+			"mode": "auto",
+			"program": "${workspaceFolder}/apps/files/cmd/main.go",
+			"envFile": "${workspaceFolder}/.env"
+		}
+	]
+}

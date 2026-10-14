@@ -1,0 +1,26 @@
+# Dependências
+node_modules/
+
+# Build
+bin/
+build/
+dist/
+.output/
+.vercel/
+.svelte-kit/
+
+# Ambiente
+.env
+.env.*
+!.env.example
+
+# Dados do serviço de files
+apps/files/.files/
+
+# Sistema
+.DS_Store
+Thumbs.db
+
+# Editor
+.vscode/*
+!.vscode/launch.json

@@ -1,0 +1,15 @@
+services:
+  database:
+    image: postgres:alpine
+    container_name: notez-database
+    environment:
+      POSTGRES_USER: notez
+      POSTGRES_PASSWORD: notez
+      POSTGRES_DB: notez
+    ports:
+      - "5432:5432"
+    volumes:
+      - notez-database:/var/lib/postgresql
+
+volumes:
+  notez-database:
