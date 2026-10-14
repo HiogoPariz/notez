@@ -38,8 +38,8 @@
     "@auth/sveltekit": "^1.7.3",
     "@editorjs/checklist": "^1.6.0",
     "@editorjs/editorjs": "^2.30.6",
-    "@editorjs/header": "^2.8.8",
-    "@editorjs/list": "^1.10.0",
+    "@editorjs/header": "^2.8.9",
+    "@editorjs/list": "^2.0.0",
     "@editorjs/quote": "^2.7.2",
     "lodash.throttle": "^4.1.1"
   }
