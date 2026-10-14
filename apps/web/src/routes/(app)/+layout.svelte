@@ -13,7 +13,7 @@
 			<li>
 				<a
 					class="flex justify-between items-center whitespace-nowrap gap-4 px-4 py-2 rounded-md hover:bg-gray-100 transition-colors"
-					href={resolve('/')}
+					href={resolve('/(app)')}
 				>
 					<span>Note 1</span>
 					<div class="w-5">

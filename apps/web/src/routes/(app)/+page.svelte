@@ -1,7 +1,7 @@
 <script>
 	// @ts-nocheck
 
-	import { saveNote } from '$lib/services/saveNote';
+	import { saveNote } from '#lib/services/saveNote.js';
 
 	// @ts-nocheck
 	import throttle from 'lodash.throttle';

@@ -1,0 +1,49 @@
+diff --git a/dist/client.js b/dist/client.js
+index 011c78aaa83e47befdbac5feb7487958ff0cfe38..2a13311cbca1c52392e62832766addc52fa541fb 100644
+--- a/dist/client.js
++++ b/dist/client.js
+@@ -1,4 +1,4 @@
+-import { base } from "$app/paths";
++const base = "";
+ export async function signIn(provider, options, authorizationParams) {
+     const { callbackUrl, ...rest } = options ?? {};
+     const { redirect = true, redirectTo = callbackUrl ?? window.location.href, ...signInParams } = rest;
+diff --git a/dist/env.js b/dist/env.js
+index a1a26c80305ed6c96cb4352a2cdea717362f47db..43b7b145853462cecf79f9a0c5ac5e131ad2d24e 100644
+--- a/dist/env.js
++++ b/dist/env.js
+@@ -1,9 +1,8 @@
+ import { setEnvDefaults as coreSetEnvDefaults, skipCSRFCheck } from "@auth/core";
+-import { dev, building } from "$app/environment";
+-import { base } from "$app/paths";
++import { dev, building } from "$app/env";
+ export function setEnvDefaults(envObject, config) {
+     config.trustHost ??= dev;
+-    config.basePath = `${base}/auth`;
++    config.basePath = `/auth`;
+     config.skipCSRFCheck = skipCSRFCheck;
+     if (building)
+         return;
+diff --git a/dist/index.js b/dist/index.js
+index a2fb0150da6c36659aae038b99030e2dc699c1df..7eae3ec3ff8743dc69209c1f6d8e689ab89af065 100644
+--- a/dist/index.js
++++ b/dist/index.js
+@@ -285,7 +285,7 @@ import { env } from "$env/dynamic/private";
+ import { setEnvDefaults } from "./env";
+ import { auth, signIn, signOut } from "./actions";
+ import { Auth, isAuthAction, customFetch } from "@auth/core";
+-import { building } from "$app/environment";
++import { building } from "$app/env";
+ export { customFetch };
+ export { AuthError, CredentialsSignin } from "@auth/core/errors";
+ const authorizationParamsPrefix = "authorizationParams-";
+diff --git a/dist/webauthn.js b/dist/webauthn.js
+index 651aa3d6d9d60182927f1cf753b55bba88bfe3d0..deb507c330188ec04e9aee2cfbcabe36a5559a4e 100644
+--- a/dist/webauthn.js
++++ b/dist/webauthn.js
+@@ -1,4 +1,4 @@
+-import { base } from "$app/paths";
++const base = "";
+ import { startAuthentication, startRegistration } from "@simplewebauthn/browser";
+ const logger = {
+     debug: console.debug,

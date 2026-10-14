@@ -1,10 +1,10 @@
-import { atuhHandle } from '$lib/auth';
-import { TokenBucket } from '$lib/rate-limit';
+import { atuhHandle } from '#lib/auth.js';
+import { TokenBucket } from '#lib/rate-limit.js';
 import { sequence } from '@sveltejs/kit/hooks';
 
 const bucket = new TokenBucket(100, 1);
 
-/** @type {import("@sveltejs/kit").Handle} */
+/** @type {import("@sveltejs/kit/hooks").Handle} */
 const rateLimitHandle = async ({ event, resolve }) => {
 	const clientIP = event.request.headers.get('X-Forwarded-For');
 	if (clientIP === null) {
@@ -25,7 +25,7 @@ const rateLimitHandle = async ({ event, resolve }) => {
 	return resolve(event);
 };
 
-/** @type {import("@sveltejs/kit").Handle} */
+/** @type {import("@sveltejs/kit/hooks").Handle} */
 const sessionHandle = async ({ event, resolve }) => {
 	const auth = await event.locals.auth();
 	if (auth) {

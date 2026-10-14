@@ -1,22 +1,14 @@
 // See https://kit.svelte.dev/docs/types#app
-export interface Session {
-	user: User;
-	expires: Date;
-}
+import type { Session } from '@auth/core/types';
 
-export interface User {
-	name: string;
-	email: string;
-	image: string;
-}
-
-// for information about these interfaces
+// `@auth/sveltekit` already augments `App.Locals` with `auth()`, `signIn` and
+// `signOut` (and `App.PageData.session`). Here we only add the `session` field
+// that `src/hooks.server.js` populates after a successful authentication.
 declare global {
 	namespace App {
 		// interface Error {}
 		interface Locals {
-			session?: Session;
-			auth(): Promise<Session>;
+			session?: Session | null;
 		}
 		// interface PageData {}
 		// interface PageState {}

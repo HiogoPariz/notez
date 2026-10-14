@@ -1,6 +1,6 @@
-import { env } from '$env/dynamic/private';
+import { API_URL as API_URL_ENV } from '$app/env/private';
 
-const API_URL = env.API_URL ?? 'http://localhost:3000';
+const API_URL = API_URL_ENV || 'http://localhost:3000';
 
 /**
  * Proxy catch-all que encaminha as requisições de /api/* para a API,

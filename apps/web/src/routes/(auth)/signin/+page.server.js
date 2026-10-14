@@ -1,3 +1,3 @@
-import { signIn } from '$lib/auth';
+import { signIn } from '#lib/auth.js';
 
 export const actions = { default: signIn };
