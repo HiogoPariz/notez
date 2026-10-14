@@ -1,9 +1,8 @@
 <script>
-	import { page } from '$app/stores';
+	import { resolve } from '$app/paths';
 	import { SignOut } from '@auth/sveltekit/components';
 
 	import { EyeOutline } from 'flowbite-svelte-icons';
-	$: activeUrl = $page.url.pathname;
 </script>
 
 <main>
@@ -14,7 +13,7 @@
 			<li>
 				<a
 					class="flex justify-between items-center whitespace-nowrap gap-4 px-4 py-2 rounded-md hover:bg-gray-100 transition-colors"
-					href="/"
+					href={resolve('/')}
 				>
 					<span>Note 1</span>
 					<div class="w-5">
